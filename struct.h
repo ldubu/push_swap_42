@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_doublon.c                                    :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 14:27:41 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/20 16:57:11 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/01/20 16:18:56 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/01/20 16:25:42 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef STRUCT_H
+# define STRUCT_H
 
-int ft_is_doublon(int *tab, int i, int nbr)
+typedef struct s_list
 {
-	int j;
+	void			*content;
+	struct s_list	*next;
+	struct s_list	*previous;
+}					t_list;
 
-	j = 0;
-	//printf("tab %d nbr %d i %d\n", tab[j], nbr, i);
-	while (j < i)
-	{
-		
-		if (tab[j] == nbr)
-			return (1);
-		j++;
-	}
-	return(0);
-}
+#endif

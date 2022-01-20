@@ -12,13 +12,12 @@
 
 #include "push_swap.h"
 
-int	*ft_atoi(const char *str)
+int	ft_atoips(const char *str)
 {
-	int	*num;
+	int	num;
 	int	sign;
 
 	sign = 1;
-	num = (int *) malloc()
 	num = 0;
 	if (*str == '-' || *str == '+')
 	{
@@ -26,12 +25,13 @@ int	*ft_atoi(const char *str)
 			sign = -1;
 		str++;
 	}
+	
 	while (*str)
 	{
-		if (*str < '0' && *str > '9')
-
+ 		//printf("%s, %d\n", str, num);
 		num = num * 10 + *str - 48;
 		str++;
 	}
+	//printf("%s, %d\n", str, num);
 	return (num * sign);
 }

@@ -1,0 +1,29 @@
+srcs/ft_strncmp.c: OK!
+srcs/ft_ini_struct.c: OK!
+srcs/ft_itoa.c: OK!
+srcs/ft_strrchr.c: OK!
+srcs/ft_toupper.c: OK!
+srcs/ft_write_args.c: Error!
+Error: TOO_MANY_LINES       (line:  44, col:   1):      Function has more than 25 lines
+srcs/ft_putstr.c: OK!
+srcs/ft_strcpy.c: OK!
+srcs/ft_strlen.c: OK!
+srcs/ft_c_to_str.c: OK!
+srcs/ft_putargs.c: Error!
+Error: LINE_TOO_LONG        (line:  64, col:  82):      line too long
+Error: TAB_INSTEAD_SPC      (line:  69, col:  37):      Found tab when expecting space
+Error: TOO_MANY_TAB         (line:  78, col:   1):      Extra tabs for indent level
+Error: TOO_MANY_LINES       (line:  80, col:   1):      Function has more than 25 lines
+srcs/ft_address.c: OK!
+srcs/ft_unsi_itoa.c: OK!
+srcs/ft_printf.c: OK!
+srcs/ft_hexa.c: OK!
+srcs/ft_flags.c: Error!
+Error: LINE_TOO_LONG        (line:  96, col:  82):      line too long
+Error: TOO_MANY_FUNCS       (line: 131, col:   1):      Too many functions in file
+Error: SPACE_BEFORE_FUNC    (line: 131, col:   5):      space before function name
+Error: BRACE_SHOULD_EOL     (line: 138, col:   1):      Expected newline after brace
+srcs/ft_strjoin.c: OK!
+includes/ft_struct.h: OK!
+includes/ft_printf.h: Error!
+Error: SPACE_REPLACE_TAB    (line:  56, col:   5):      Found space when expecting tab

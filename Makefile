@@ -14,21 +14,22 @@ OBJ = $(SRCS:.c=.o)
 .c.o:	push_swap.h
 	gcc ${FLAGS} -c $< -o ${<:.c=.o}
 			
-$(NAME): 	$(OBJ)
-	@gcc ${FLAGS} -o $(OBJ) $(NAME)
+$(NAME): 	$(OBJ) libft
+	@gcc ${FLAGS} $(OBJ) libft.a -o $(NAME)
 
 libft:
-	@make -C libft_42/
+	@make -C libft/
+	@cp ./libft/libft.a ./
 
 all: $(NAME) libft
 
 clean:
 	@$(RM) $(OBJ)
-	@make clean -C libft_42/
+	@make clean -C libft/
 
 fclean:		clean
-	@$(RM) $(NAME)
-	@make fclean -C libft_42/ 
+	@$(RM) $(NAME) libft.a
+	@make fclean -C libft/ 
 
 re: 	fclean all
 
