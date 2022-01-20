@@ -14,26 +14,38 @@
 
 int	main(int argc, char *argv[])
 {
-	t_list	*stack_a;
+	int *stack_a;
+
 	if (argc == 1)
 		return (0);
-	stack_a = ft_error(argc, argv)
-	else if (stack_a == NULL)
+	stack_a = ft_error(argc, argv);
+	if (stack_a == NULL)
 	{
-		ft_putstr_fd("Error\n");
+		ft_putstr_fd("Error\n", 1);
 		return(0);
 	}
 	return (0);
 }
 
-t_list	*ft_error(int argc, char *argv[])
+int	*ft_error(int argc, char *argv[])
 {
+	int	tab[argc];
+	int	i;
+	int	temp;
+
+	i = 0;
 	argv++;
 	while (--argc > 0)
 	{
 		if (ft_isnbr(*argv) == 0)
 			return (NULL);
-		
+		temp = ft_atoi(*argv);
+		if (ft_is_doublon(tab, i, temp))
+			return(NULL);
+		tab[i] = temp;
+		i++;
+		argv++;		
 	}
+	return (tab);
 }
 	

@@ -4,12 +4,15 @@ FLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
 
-SRCS = main.c
+SRCS = 	main.c \
+		ft_isnbr.c \
+		ft_is_doublon.c \
+		ft_atoips.c
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRCS:.c=.o)
 
 .c.o:	push_swap.h
-	@gcc ${FLAGS} -c $< -o ${<:.c=.o}
+	gcc ${FLAGS} -c $< -o ${<:.c=.o}
 			
 $(NAME): 	$(OBJ)
 	@gcc ${FLAGS} -o $(OBJ) $(NAME)

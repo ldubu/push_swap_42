@@ -16,7 +16,7 @@ int	ft_isnbr(char *str)
 {
 	while (*str)
 	{
-		if (*str < 48 || *str > 57)
+		if ((*str < 48 || *str > 57) && *str != '-')
 			return (0);
 		str++;			
 	}

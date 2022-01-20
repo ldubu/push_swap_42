@@ -16,8 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "libft.h"
+# include "./libft_42/libft.h"
 
 int	ft_isnbr(char *str);
+int	*ft_error(int argc, char *argv[]);
+int ft_is_doublon(int tab[], int nbr, int i);
 
 #endif
