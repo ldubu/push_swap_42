@@ -15,9 +15,7 @@
 int	main(int argc, char *argv[])
 {
 	int *stack_a;
-	int	i;
 
-	i = 0;
 	if (argc == 1)
 		return (0);
 	stack_a = ft_error(argc, argv);
@@ -26,11 +24,7 @@ int	main(int argc, char *argv[])
 		ft_putstr_fd("Error\n", 1);
 		return(0);
 	}
-	while (--argc > 0)
-	{
-		printf("%d\n", stack_a[i]);
-		i++;
-	}
+	ft_is_sorted(stack_a, argc-1);
 	return (0);
 }
 
@@ -48,7 +42,6 @@ int	*ft_error(int argc, char *argv[])
 		if (ft_isnbr(*argv) == 0)
 			return (NULL);
 		temp = ft_atoips(*argv);
-		//printf("temp %d, tab %d, argv %s\n", temp, tab[i], *argv);
 		if (ft_is_doublon(tab, i, temp))
 			return(NULL);
 		tab[i] = temp;
@@ -57,5 +50,26 @@ int	*ft_error(int argc, char *argv[])
 		argv++;		
 	}
 	return (tab);
+}
+
+void	ft_is_sorted(int *stack_a, int size)
+{
+	int i;
+	int j;
+
+	i = size;
+	j = 0;
+	while (i-- > 1)
+	{
+		if (stack_a[j] > stack_a[j + 1])
+		{
+			if (size < 6)
+				printf("tri algo petite stack\n");
+			else
+				printf("tri grande stack\n");
+			i = 0;
+		}
+		j++;
+	}
 }
 	

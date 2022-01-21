@@ -22,5 +22,6 @@ int	ft_isnbr(char *str);
 int	*ft_error(int argc, char *argv[]);
 int ft_is_doublon(int tab[], int nbr, int i);
 int	ft_atoips(const char *str);
+void	ft_is_sorted(int *stack_a, int size);
 
 #endif
