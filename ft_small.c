@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 10:34:29 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/25 15:32:17 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:38:09 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,21 @@ void	ft_sup3(t_stacks *s)
 	i = s->size - 3;
 	while (i-- > 0)
 		ft_p('b', s);
-	printf("%d %d %d %d %d\n", s->b[0], s->b[1], s->b[2], s->b[3], s->b[4]);
-	printf("%d %d %d %d %d\n", s->a[0], s->a[1], s->a[2], s->a[3], s->a[4]);
+	//printf("%d %d %d %d %d\n", s->b[0], s->b[1], s->b[2], s->b[3], s->b[4]);
+	//printf("%d %d %d %d %d\n", s->a[0], s->a[1], s->a[2], s->a[3], s->a[4]);
 	ft_3nbr(s);
-	printf("%d %d %d %d %d\n", s->b[0], s->b[1], s->b[2], s->b[3], s->b[4]);
-	printf("%d %d %d %d %d\n", s->a[0], s->a[1], s->a[2], s->a[3], s->a[4]);
+	//printf("%d %d %d %d %d\n", s->b[0], s->b[1], s->b[2], s->b[3], s->b[4]);
+	//printf("%d %d %d %d %d\n", s->a[0], s->a[1], s->a[2], s->a[3], s->a[4]);
+	//printf(" b_size = %d\n", s->b_size);
+	while (s->b_size >= 0)
+	{	ft_move(s);
+		//printf("%d %d %d %d %d\n", s->b[0], s->b[1], s->b[2], s->b[3], s->b[4]);
+		//printf("%d %d %d %d %d\n", s->a[0], s->a[1], s->a[2], s->a[3], s->a[4]);
+	}
+	while (s->a[s->a_size] > s->a[0])
+	{
+		ft_r('a', s, s->a_size + 1);
+		//printf("%d %d %d %d %d\n", s->a_size, s->b[1], s->b[2], s->b[3], s->b[4]);
+		//printf("%d %d %d %d %d\n", s->a[0], s->a[1], s->a[2], s->a[3], s->a[4]);
+	}
 }

@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 	s->b = (int *) malloc (sizeof(int) * argc - 1);
 	s->size = argc - 1;
 	s->a_size = s->size - 1;
-	s->b_size = 0;
+	s->b_size = -1;
 	ft_is_sorted(s);
 	return (ft_free_struc(s));
 }

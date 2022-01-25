@@ -33,5 +33,6 @@ void	ft_r(char c, t_stacks *s, int size);
 void	ft_rr(char c, t_stacks *s, int size);
 void	ft_p(char c, t_stacks *s);
 void	ft_sup3(t_stacks *s);
+void	ft_move(t_stacks *s);
 
 #endif

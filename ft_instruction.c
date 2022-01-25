@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:00:36 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/25 15:31:10 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:06:36 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_p(char c, t_stacks *s)
 {
 	if (c == 'a')
 	{
-		s->a[s->a_size] = s->b[s->b_size];
+		s->a[s->a_size + 1] = s->b[s->b_size];
 		s->b[s->b_size] = 0;
 		s->a_size = s->a_size + 1;
 		s->b_size = s->b_size - 1;
@@ -94,7 +94,7 @@ void	ft_p(char c, t_stacks *s)
 	}
 	else
 	{
-		s->b[s->b_size] = s->a[s->a_size];
+		s->b[s->b_size + 1] = s->a[s->a_size];
 		s->a[s->a_size] = 0;
 		s->b_size = s->b_size + 1;
 		s->a_size = s->a_size - 1;
