@@ -17,11 +17,21 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "./libft/libft.h"
+# include "struct.h"
 
-int	ft_isnbr(char *str);
-int	*ft_error(int argc, char *argv[]);
-int ft_is_doublon(int tab[], int nbr, int i);
-int	ft_atoips(const char *str);
-void	ft_is_sorted(int *stack_a, int size);
+int		ft_isnbr(char *str);
+int		*ft_error(int argc, char *argv[]);
+int		ft_is_doublon(int tab[], int i, int nbr, int size);
+int		ft_atoips(const char *str);
+int		ft_free_struc(t_stacks *s);
+int		*ft_abr(char c, t_stacks *s);
+void	ft_is_sorted(t_stacks *s);
+void	ft_small(t_stacks *s);
+void	ft_3nbr(t_stacks *s);
+void	ft_s(char c, t_stacks *s, int size);
+void	ft_r(char c, t_stacks *s, int size);
+void	ft_rr(char c, t_stacks *s, int size);
+void	ft_p(char c, t_stacks *s);
+void	ft_sup3(t_stacks *s);
 
 #endif

@@ -14,62 +14,21 @@
 
 int	main(int argc, char *argv[])
 {
-	int *stack_a;
+	t_stacks	*s;
 
 	if (argc == 1)
 		return (0);
-	stack_a = ft_error(argc, argv);
-	if (stack_a == NULL)
+	s = (t_stacks *) malloc(sizeof(t_stacks));
+	s->a = ft_error(argc, argv);
+	if (s->a == NULL)
 	{
 		ft_putstr_fd("Error\n", 1);
-		return(0);
+		return (ft_free_struc(s));
 	}
-	ft_is_sorted(stack_a, argc-1);
-	return (0);
+	s->b = (int *) malloc (sizeof(int) * argc - 1);
+	s->size = argc - 1;
+	s->a_size = s->size - 1;
+	s->b_size = 0;
+	ft_is_sorted(s);
+	return (ft_free_struc(s));
 }
-
-int	*ft_error(int argc, char *argv[])
-{
-	int	*tab;
-	int	i;
-	int	temp;
-
-	i = 0;
-	argv++;
-	tab = (int *) malloc (sizeof(int) * argc);
-	while (--argc > 0)
-	{
-		if (ft_isnbr(*argv) == 0)
-			return (NULL);
-		temp = ft_atoips(*argv);
-		if (ft_is_doublon(tab, i, temp))
-			return(NULL);
-		tab[i] = temp;
-		
-		i++;
-		argv++;		
-	}
-	return (tab);
-}
-
-void	ft_is_sorted(int *stack_a, int size)
-{
-	int i;
-	int j;
-
-	i = size;
-	j = 0;
-	while (i-- > 1)
-	{
-		if (stack_a[j] > stack_a[j + 1])
-		{
-			if (size < 6)
-				printf("tri algo petite stack\n");
-			else
-				printf("tri grande stack\n");
-			i = 0;
-		}
-		j++;
-	}
-}
-	

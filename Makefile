@@ -7,7 +7,12 @@ RM = rm -rf
 SRCS = 	main.c \
 		ft_isnbr.c \
 		ft_is_doublon.c \
-		ft_atoips.c
+		ft_atoips.c \
+		ft_small.c \
+		ft_instruction.c \
+		ft_free_struc.c \
+		ft_is_sorted.c \
+		ft_error.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -18,6 +23,7 @@ $(NAME): 	$(OBJ) libft
 	@gcc ${FLAGS} $(OBJ) libft.a -o $(NAME)
 
 libft:
+#	@make printf -C libft/
 	@make -C libft/
 	@cp ./libft/libft.a ./
 

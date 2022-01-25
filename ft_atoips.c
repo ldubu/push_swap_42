@@ -25,13 +25,10 @@ int	ft_atoips(const char *str)
 			sign = -1;
 		str++;
 	}
-	
 	while (*str)
 	{
- 		//printf("%s, %d\n", str, num);
 		num = num * 10 + *str - 48;
 		str++;
 	}
-	//printf("%s, %d\n", str, num);
 	return (num * sign);
 }

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   ft_free_struc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 16:18:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/25 14:23:00 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/01/25 13:52:52 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/01/25 14:05:41 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#include "push_swap.h"
 
-typedef struct stacks
+int	ft_free_struc(t_stacks *s)
 {
-	int	*a;
-	int	*b;
-	int	size;
-	int	a_size;
-	int	b_size;
-}		t_stacks;
-
-#endif
+	if (s)
+	{
+		if (s->a)
+			free(s->a);
+		if (s->b)
+			free(s->b);
+		free(s);
+	}
+	return (0);
+}

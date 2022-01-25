@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 16:18:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/25 14:23:00 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/01/25 13:43:07 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/01/25 14:05:29 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#include "push_swap.h"
 
-typedef struct stacks
+int	*ft_error(int argc, char *argv[])
 {
-	int	*a;
-	int	*b;
+	int	*tab;
 	int	size;
-	int	a_size;
-	int	b_size;
-}		t_stacks;
+	int	temp;
 
-#endif
+	argv++;
+	size = argc - 1;
+	tab = (int *) malloc (sizeof(int) * argc - 1);
+	while (--argc > 0)
+	{
+		if (ft_isnbr(*argv) == 0)
+			return (NULL);
+		temp = ft_atoips(*argv);
+		if (ft_is_doublon(tab, argc, temp, size))
+			return (NULL);
+		tab[argc - 1] = temp;
+		argv++;
+	}
+	return (tab);
+}
