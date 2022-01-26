@@ -13,7 +13,8 @@ SRCS = 	main.c \
 		ft_free_struc.c \
 		ft_is_sorted.c \
 		ft_error.c \
-		ft_move.c
+		ft_move.c \
+		ft_sup3.c
 
 OBJ = $(SRCS:.c=.o)
 

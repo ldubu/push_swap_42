@@ -25,6 +25,7 @@ int		ft_is_doublon(int tab[], int i, int nbr, int size);
 int		ft_atoips(const char *str);
 int		ft_free_struc(t_stacks *s);
 int		*ft_abr(char c, t_stacks *s);
+int		ft_sort(t_stacks *s);
 void	ft_is_sorted(t_stacks *s);
 void	ft_small(t_stacks *s);
 void	ft_3nbr(t_stacks *s);
@@ -34,5 +35,8 @@ void	ft_rr(char c, t_stacks *s, int size);
 void	ft_p(char c, t_stacks *s);
 void	ft_sup3(t_stacks *s);
 void	ft_move(t_stacks *s);
+void	ft_min_max(t_stacks *s);
+void	ft_rotate(t_stacks *s, int index);
+
 
 #endif

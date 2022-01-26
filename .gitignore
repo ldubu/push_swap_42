@@ -3,3 +3,4 @@ push_swap
 *.o
 libft.a
 ft_printf.a
+generator
