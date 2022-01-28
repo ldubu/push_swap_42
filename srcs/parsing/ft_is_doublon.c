@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   ft_is_doublon.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 16:18:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/26 15:35:44 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/01/20 14:27:41 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/01/28 13:30:05 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#include "../../includes/push_swap.h"
 
-typedef struct stacks
+int	ft_is_doublon(int *tab, int i, int nbr, int size)
 {
-	int	*a;
-	int	*b;
-	int	size;
-	int	a_size;
-	int	b_size;
-	int min;
-	int max;
-	int index;
-}		t_stacks;
+	int	j;
 
-#endif
+	j = size - 1;
+	while (j > i - 1)
+	{
+		if (tab[j] == nbr)
+			return (1);
+		j--;
+	}
+	return (0);
+}

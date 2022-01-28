@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 13:43:57 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/25 14:12:48 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/01/25 13:43:07 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/01/28 13:29:54 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	ft_is_sorted(t_stacks *s)
+int	*ft_error(int argc, char *argv[])
 {
-	int	i;
+	int	*tab;
+	int	size;
+	int	temp;
 
-	i = s->size - 1;
-	while (i > 0)
+	argv++;
+	size = argc - 1;
+	tab = (int *) malloc (sizeof(int) * argc - 1);
+	while (--argc > 0)
 	{
-		if (s->a[i] > s->a[i - 1])
-		{
-			if (s->size < 6)
-				ft_small(s);
-			else
-				printf("tri grande stack\n");
-			i = -1;
-		}
-		i--;
+		if (ft_isnbr(*argv) == 0)
+			return (NULL);
+		temp = ft_atoips(*argv);
+		if (ft_is_doublon(tab, argc, temp, size))
+			return (NULL);
+		tab[argc - 1] = temp;
+		argv++;
 	}
+	return (tab);
 }

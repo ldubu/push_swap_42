@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 # include "struct.h"
 
 int		ft_isnbr(char *str);
@@ -26,6 +26,7 @@ int		ft_atoips(const char *str);
 int		ft_free_struc(t_stacks *s);
 int		*ft_abr(char c, t_stacks *s);
 int		ft_sort(t_stacks *s);
+
 void	ft_is_sorted(t_stacks *s);
 void	ft_small(t_stacks *s);
 void	ft_3nbr(t_stacks *s);
@@ -37,6 +38,8 @@ void	ft_sup3(t_stacks *s);
 void	ft_move(t_stacks *s);
 void	ft_min_max(t_stacks *s);
 void	ft_rotate(t_stacks *s, int index);
-
+void	ft_pa(t_stacks *s);
+void	ft_pa2(t_stacks *s, int i, int j);
+void	ft_sort4nbr(t_stacks *s);
 
 #endif

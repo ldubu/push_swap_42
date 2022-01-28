@@ -6,11 +6,11 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 13:52:52 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/25 14:05:41 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/28 13:31:02 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	ft_free_struc(t_stacks *s)
 {

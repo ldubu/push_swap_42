@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_doublon.c                                    :+:      :+:    :+:   */
+/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 14:27:41 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/26 17:31:04 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/01/25 13:43:57 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/01/28 13:30:14 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	ft_is_doublon(int *tab, int i, int nbr, int size)
+void	ft_is_sorted(t_stacks *s)
 {
-	int	j;
+	int	i;
 
-	j = size - 1;
-	while (j > i - 1)
+	i = s->size - 1;
+	while (i > 0)
 	{
-		if (tab[j] == nbr)
-			return (1);
-		j--;
+		if (s->a[i] > s->a[i - 1])
+		{
+			if (s->size < 6)
+				ft_small(s);
+			else
+				printf("tri grande stack\n");
+			i = -1;
+		}
+		i--;
 	}
-	return (0);
 }

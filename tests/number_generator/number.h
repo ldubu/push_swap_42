@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   number.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 13:43:07 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/26 17:28:17 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/01/20 09:32:21 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/01/28 13:23:02 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef NUMBER_H
+# define NUMBER_H
 
-int	*ft_error(int argc, char *argv[])
-{
-	int	*tab;
-	int	size;
-	int	temp;
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-	argv++;
-	size = argc - 1;
-	tab = (int *) malloc (sizeof(int) * argc - 1);
-	while (--argc > 0)
-	{
-		if (ft_isnbr(*argv) == 0)
-			return (NULL);
-		temp = ft_atoips(*argv);
-		if (ft_is_doublon(tab, argc, temp, size))
-			return (NULL);
-		tab[argc - 1] = temp;
-		argv++;
-	}
-	return (tab);
-}
+int	ft_atoi(const char *str);
+int is_in_tab(int tab[], int nbr, int i);
+
+#endif

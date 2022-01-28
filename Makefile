@@ -4,21 +4,21 @@ FLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
 
-SRCS = 	main.c \
-		ft_isnbr.c \
-		ft_is_doublon.c \
-		ft_atoips.c \
-		ft_small.c \
-		ft_instruction.c \
-		ft_free_struc.c \
-		ft_is_sorted.c \
-		ft_error.c \
-		ft_move.c \
-		ft_sup3.c
+SRCS = 	srcs/main.c \
+		srcs/parsing/ft_isnbr.c \
+		srcs/parsing/ft_is_doublon.c \
+		srcs/parsing/ft_atoips.c \
+		srcs/parsing/ft_is_sorted.c \
+		srcs/parsing/ft_error.c \
+		srcs/utils/ft_instruction.c \
+		srcs/utils/ft_free_struc.c \
+		srcs/small_list/ft_small.c \
+		srcs/small_list/ft_sup3.c \
+		srcs/small_list/ft_pa.c
 
 OBJ = $(SRCS:.c=.o)
 
-.c.o:	push_swap.h
+.c.o:	includes/push_swap.h
 	gcc ${FLAGS} -c $< -o ${<:.c=.o}
 			
 $(NAME): 	$(OBJ) libft
