@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 13:43:57 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/28 13:30:14 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/28 15:07:39 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_is_sorted(t_stacks *s)
 			if (s->size < 6)
 				ft_small(s);
 			else
-				printf("tri grande stack\n");
+				ft_big(s);
 			i = -1;
 		}
 		i--;

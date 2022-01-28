@@ -41,5 +41,7 @@ void	ft_rotate(t_stacks *s, int index);
 void	ft_pa(t_stacks *s);
 void	ft_pa2(t_stacks *s, int i, int j);
 void	ft_sort4nbr(t_stacks *s);
+void	ft_big(t_stacks *s);
+void	ft_croissant(t_stacks *s, int *start, int *max);
 
 #endif

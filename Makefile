@@ -14,7 +14,8 @@ SRCS = 	srcs/main.c \
 		srcs/utils/ft_free_struc.c \
 		srcs/small_list/ft_small.c \
 		srcs/small_list/ft_sup3.c \
-		srcs/small_list/ft_pa.c
+		srcs/small_list/ft_pa.c \
+		srcs/big_list/ft_big.c
 
 OBJ = $(SRCS:.c=.o)
 

@@ -4,6 +4,7 @@ make -f Makefile -C number_generator/
 make -f Makefile -C ../
 mv number_generator/generator ./
 mv ../push_swap ./
+mv ../libft.a ./
 chmod 777 generator
 i=0
 moyennet=0

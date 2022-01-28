@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 09:31:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/28 13:40:44 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:05:29 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ int main(int argc, char *argv[])
 	i = 0;
 	while (i < voulu - 1)
 	{
-		printf("%d ", tab[i]);
+		printf("%2.2d ", tab[i]);
 		i++;
 	}
-	printf("%d ", tab[i]);
+	printf("%2.2d ", tab[i]);
 	return(0);
 }
 
