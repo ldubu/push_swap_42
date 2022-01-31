@@ -43,5 +43,7 @@ void	ft_pa2(t_stacks *s, int i, int j);
 void	ft_sort4nbr(t_stacks *s);
 void	ft_big(t_stacks *s);
 void	ft_croissant(t_stacks *s, int *start, int *max);
+void	ft_gagner_ligne(t_stacks *s, int *start, int *max, int *temp);
+void	ft_push_b(t_stacks *s, int *start, int *max);
 
 #endif

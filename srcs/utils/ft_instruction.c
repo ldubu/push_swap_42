@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:00:36 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/28 13:31:11 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/31 12:43:30 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,18 @@ void	ft_p(char c, t_stacks *s)
 		s->a_size = s->a_size - 1;
 		ft_putstr_fd("pb\n", 1);
 	}
-}
 
+}
+/*	int j;
+	j = s->size-1;
+	printf("pb\n");
+	while (j >= 0)
+		printf("%2d ", s->a[j--]);
+	printf("\n");
+	j = s->size-1;
+	while (j >=0)
+		printf("%2d ", s->b[j--]);
+	printf("\n\n");*/
 int	*ft_abr(char c, t_stacks *s)
 {
 	int	*stack;

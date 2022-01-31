@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 13:52:52 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/28 13:31:02 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/31 11:50:42 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_free_struc(t_stacks *s)
 	if (s)
 	{
 		if (s->a)
-			free(s->a);
+			//free(s->a);
 		if (s->b)
 			free(s->b);
 		free(s);

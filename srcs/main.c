@@ -15,7 +15,9 @@
 int	main(int argc, char *argv[])
 {
 	t_stacks	*s;
+	int			i;
 
+	i = 0;
 	if (argc == 1)
 		return (0);
 	s = (t_stacks *) malloc(sizeof(t_stacks));
@@ -27,6 +29,8 @@ int	main(int argc, char *argv[])
 	}
 	s->b = (int *) malloc (sizeof(int) * argc - 1);
 	s->size = argc - 1;
+	while (i < s->size)
+		s->b[i++] = 0;
 	s->a_size = s->size - 1;
 	s->b_size = -1;
 	ft_is_sorted(s);
