@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_struc.c                                    :+:      :+:    :+:   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 13:52:52 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/31 15:01:53 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/01/31 15:45:39 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/01/31 15:47:35 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_free_struc(t_stacks *s)
+void	ft_rotate(t_stacks *s, int index)
 {
-	if (s)
+	while (index < s->a_size)
 	{
-		if (s->a)
-			free(s->a);
-		if (s->b)
-			free(s->b);
-		free(s);
+		if (index >= s->a_size / 2)
+		{
+			ft_r('a', s, s->a_size + 1);
+			index = index + 1;
+		}
+		else
+		{
+			ft_rr('a', s, s->a_size + 1);
+			if (index == 0)
+				index = s->a_size;
+			else
+				index = index - 1;
+		}
 	}
-	return (0);
 }

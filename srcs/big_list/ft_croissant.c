@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 11:16:58 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/31 12:58:35 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/31 15:41:52 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	ft_gagner_ligne(t_stacks *s, int *start, int *max, int *temp)
 	}
 	else if (s->a[s->i] > s->a[s->i - 1])
 	{
+		
 		if ((s->j - (*temp -1)) > *max)
 		{
 			*max = s->j - (*temp -1);

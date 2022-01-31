@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:30:57 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/28 13:30:56 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/31 15:47:47 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,49 +46,6 @@ int	ft_sort(t_stacks *s)
 		i++;
 	}
 	return (-1);
-}
-
-void	ft_min_max(t_stacks *s)
-{
-	int	i;
-
-	i = s->a_size;
-	s->min = s->a[s->a_size];
-	s->max = s->a[s->a_size];
-	s->index = s->a_size;
-	while (i >= 0)
-	{
-		if (s->a[i] < s->min)
-		{
-			s->min = s->a[i];
-			s->index = i;
-		}
-		if (s->a[i] > s->max)
-		{
-			s->max = s->a[i];
-		}
-		i--;
-	}
-}
-
-void	ft_rotate(t_stacks *s, int index)
-{
-	while (index < s->a_size)
-	{
-		if (index >= s->a_size / 2)
-		{
-			ft_r('a', s, s->a_size + 1);
-			index = index + 1;
-		}
-		else
-		{
-			ft_rr('a', s, s->a_size + 1);
-			if (index == 0)
-				index = s->a_size;
-			else
-				index = index - 1;
-		}
-	}
 }
 
 void	ft_sort4nbr(t_stacks *s)

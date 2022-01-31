@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:49:06 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/31 12:48:38 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/31 15:41:29 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,43 +30,4 @@ void	ft_big(t_stacks *s)
 	while (i >=0)
 		printf("%2d ", s->b[i--]);
 	printf("\n\n");
-}
-
-void	ft_push_b(t_stacks *s, int *start, int *max)
-{
-	s->i = s->a_size;
-	
-	if (*start < s->max_index)
-	{       printf("start = %d, max_index = %d\n", *start, s->index);
-			if (s->i < *start || s->i > s->max_index)
-				ft_p('b', s);
-			else
-			{
-				while ((*max)-- > 0)
-				{
-					ft_r('a', s, s->a_size + 1);
-					*start = (*start + 1) % (s->i + 1);
-					s->max_index = (s->max_index + 1) % s->i;
-				}
-			}
-			s->i = s->i - 1;
-	}
-	else
-	{
-		while (s->i >= 0)
-		{
-			if (s->i > *start || s->i < s->max_index)
-				ft_p('b', s);
-			else
-			{
-				while ((*max)-- > 0)
-				{
-					ft_r('a', s, s->a_size + 1);
-					*start = (*start + 1) % (s->i + 1);
-					s->max_index = (s->max_index + 1) % s->i;
-				}
-			}
-			s->i = s->i - 1;
-		}
-	}
 }

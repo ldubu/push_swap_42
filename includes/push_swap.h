@@ -26,6 +26,7 @@ int		ft_atoips(const char *str);
 int		ft_free_struc(t_stacks *s);
 int		*ft_abr(char c, t_stacks *s);
 int		ft_sort(t_stacks *s);
+int		ft_abs(int x);
 
 void	ft_is_sorted(t_stacks *s);
 void	ft_small(t_stacks *s);
@@ -45,5 +46,6 @@ void	ft_big(t_stacks *s);
 void	ft_croissant(t_stacks *s, int *start, int *max);
 void	ft_gagner_ligne(t_stacks *s, int *start, int *max, int *temp);
 void	ft_push_b(t_stacks *s, int *start, int *max);
+
 
 #endif

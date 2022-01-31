@@ -16,7 +16,8 @@ SRCS = 	srcs/main.c \
 		srcs/small_list/ft_sup3.c \
 		srcs/small_list/ft_pa.c \
 		srcs/big_list/ft_big.c \
-		srcs/big_list/ft_croissant.c
+		srcs/big_list/ft_croissant.c \
+		srcs/big_list/ft_push_b.c
 
 OBJ = $(SRCS:.c=.o)
 
