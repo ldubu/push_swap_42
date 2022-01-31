@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:49:06 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/31 15:41:29 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/01/31 16:31:44 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_big(t_stacks *s)
 	max = 0;
 	ft_croissant(s, &start, &max);
 	ft_push_b(s, &start, &max);
+	ft_cout(s);
 	i = s->size - 1;
 	while (i >= 0)
 		printf("%2d ", s->a[i--]);
@@ -30,4 +31,17 @@ void	ft_big(t_stacks *s)
 	while (i >=0)
 		printf("%2d ", s->b[i--]);
 	printf("\n\n");
+}
+
+void	ft_cout(t_stacks *s) //il faut faire une fonction qui appelle celle la en boucle jusqu'a la maximisation ou la fin du tableau
+{
+	int	index;
+
+	ft_min_max(s);
+	if (s->b[s->b_size] < s->min || s->b[s->b_size] > s->max)
+		index = s->index;
+	else
+	{
+		index = s->a_size;
+	}
 }
