@@ -1,41 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.h                                           :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 16:18:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/03 11:29:07 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/02/03 11:31:26 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/02/03 11:32:25 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCT_H
-# define STRUCT_H
+#include "../../includes/push_swap.h"
 
-typedef struct stacks
+int	ft_abs(int x)
 {
-	int	*a;
-	int	*b;
-	int	size;
-	int	a_size;
-	int	b_size;
-	int	min;
-	int	max;
-	int	max_index;
-	int	index;
-	int	i;
-	int	j;
-	
-}		t_stacks;
-
-typedef struct cost
-{
-	int min_index;
-	int min_r_rota;
-	int min_r;
-	int r_rota;
-	int r;
-}		t_cost;
-
-#endif
+	if (x < 0)
+		x = -x;
+	return (x);
+}
