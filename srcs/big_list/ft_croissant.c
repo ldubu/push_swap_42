@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 11:16:58 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/31 15:41:52 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/03 16:33:56 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_croissant(t_stacks *s, int *start, int *max)
 	{
 		s->j = s->j + 1;
 		ft_gagner_ligne(s, start, max, &temp);
-		if (s->i != 0)
+		if (s->i != s->a_size)
 			s->i = s->i - 1;
 	}
 }

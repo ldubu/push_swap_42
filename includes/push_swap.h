@@ -28,7 +28,7 @@ int		*ft_abr(char c, t_stacks *s, int *size);
 int		ft_sort(t_stacks *s);
 int		ft_abs(int x);
 int		ft_cost(t_stacks *s, t_cost *r, int i);
-int		ft_index(t_stacks *s, int j);
+int		ft_index(t_stacks *s, int j, char c);
 int		ft_false_rotate(t_stacks *s, t_cost *r, int b, int a);
 
 void	ft_is_sorted(t_stacks *s);
@@ -51,6 +51,6 @@ void	ft_gagner_ligne(t_stacks *s, int *start, int *max, int *temp);
 void	ft_push_b(t_stacks *s, int *start, int *max);
 void	ft_maximize(t_stacks *s);
 void	ft_min(t_cost *r, int tmp);
-void	ft_rotate_b(t_stacks *s, int index);
+void	ft_rotate_ab(t_stacks *s, t_cost *r);
 
 #endif
