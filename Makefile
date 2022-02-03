@@ -12,6 +12,9 @@ SRCS = 	srcs/main.c \
 		srcs/parsing/ft_error.c \
 		srcs/utils/ft_instruction.c \
 		srcs/utils/ft_free_struc.c \
+		srcs/utils/ft_min_max.c \
+		srcs/utils/ft_rotate.c  \
+		srcs/utils/ft_abs.c \
 		srcs/small_list/ft_small.c \
 		srcs/small_list/ft_sup3.c \
 		srcs/small_list/ft_pa.c \

@@ -24,16 +24,19 @@ int		*ft_error(int argc, char *argv[]);
 int		ft_is_doublon(int tab[], int i, int nbr, int size);
 int		ft_atoips(const char *str);
 int		ft_free_struc(t_stacks *s);
-int		*ft_abr(char c, t_stacks *s);
+int		*ft_abr(char c, t_stacks *s, int *size);
 int		ft_sort(t_stacks *s);
 int		ft_abs(int x);
+int		ft_cost(t_stacks *s, t_cost *r, int i);
+int		ft_index(t_stacks *s, int j);
+int		ft_false_rotate(t_stacks *s, t_cost *r, int b, int a);
 
 void	ft_is_sorted(t_stacks *s);
 void	ft_small(t_stacks *s);
 void	ft_3nbr(t_stacks *s);
-void	ft_s(char c, t_stacks *s, int size);
-void	ft_r(char c, t_stacks *s, int size);
-void	ft_rr(char c, t_stacks *s, int size);
+void	ft_s(char c, t_stacks *s);
+void	ft_r(char c, t_stacks *s);
+void	ft_rr(char c, t_stacks *s);
 void	ft_p(char c, t_stacks *s);
 void	ft_sup3(t_stacks *s);
 void	ft_move(t_stacks *s);
@@ -46,6 +49,8 @@ void	ft_big(t_stacks *s);
 void	ft_croissant(t_stacks *s, int *start, int *max);
 void	ft_gagner_ligne(t_stacks *s, int *start, int *max, int *temp);
 void	ft_push_b(t_stacks *s, int *start, int *max);
-
+void	ft_maximize(t_stacks *s);
+void	ft_min(t_cost *r, int tmp);
+void	ft_rotate_b(t_stacks *s, int index);
 
 #endif

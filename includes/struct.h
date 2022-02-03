@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 16:18:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/03 11:29:07 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/03 13:46:49 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct cost
 	int min_index;
 	int min_r_rota;
 	int min_r;
+	int min_a;
+	int min_b;
 	int r_rota;
 	int r;
 }		t_cost;

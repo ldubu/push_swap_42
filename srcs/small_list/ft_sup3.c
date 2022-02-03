@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:30:57 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/31 15:47:47 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/03 13:49:14 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,22 @@ void	ft_sort4nbr(t_stacks *s)
 	while (i != -1)
 	{
 		if (s->a[3] > s->a[2] && (s->max != s->a[3] || s->index != 2))
-			ft_s('a', s, 4);
+			ft_s('a', s);
 		else if (s->a[2] > s->a[1] && s->index != 1)
 		{
-			ft_r('a', s, 4);
-			ft_s('a', s, 4);
+			ft_r('a', s);
+			ft_s('a', s);
 		}
 		else if (s->a[1] > s->a[0] && s->index != 0)
 		{
-			ft_r('a', s, 4);
-			ft_r('a', s, 4);
-			ft_s('a', s, 4);
+			ft_r('a', s);
+			ft_r('a', s);
+			ft_s('a', s);
 		}
 		else if (s->a[0] > s->a[3] && s->index != 3)
 		{
-			ft_rr('a', s, 4);
-			ft_s('a', s, 4);
+			ft_rr('a', s);
+			ft_s('a', s);
 		}
 		i = ft_sort(s);
 	}

@@ -6,23 +6,24 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:00:36 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/31 15:42:31 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/03 14:06:01 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_s(char c, t_stacks *s, int size)
+void	ft_s(char c, t_stacks *s)
 {
 	int	temp;
 	int	*stack;
+	int size;
 
 	if (c == 's')
-		ft_s('u', s, size);
-	stack = ft_abr(c, s);
-	temp = stack[size - 1];
-	stack[size - 1] = stack[size - 2];
-	stack[size - 2] = temp;
+		ft_s('u', s);
+	stack = ft_abr(c, s, &size);
+	temp = stack[size];
+	stack[size] = stack[size - 1];
+	stack[size - 1] = temp;
 	if (c == 'a')
 		ft_putstr_fd("sa\n", 1);
 	else if (c == 'b')
@@ -31,18 +32,19 @@ void	ft_s(char c, t_stacks *s, int size)
 		ft_putstr_fd("ss\n", 1);
 }
 
-void	ft_rr(char c, t_stacks *s, int size)
+void	ft_rr(char c, t_stacks *s)
 {
 	int	temp;
 	int	i;
 	int	*stack;
+	int size;
 
 	if (c == 'r')
-		ft_rr('u', s, size);
-	stack = ft_abr(c, s);
+		ft_rr('u', s);
+	stack = ft_abr(c, s, &size);
 	temp = stack[0];
 	i = 0;
-	while (size > 0)
+	while (size >= 0)
 	{
 		stack[i] = stack[i + 1];
 		i++;
@@ -57,18 +59,19 @@ void	ft_rr(char c, t_stacks *s, int size)
 		ft_putstr_fd("rrr\n", 1);
 }
 
-void	ft_r(char c, t_stacks *s, int size)
+void	ft_r(char c, t_stacks *s)
 {
 	int	temp;
 	int	i;
 	int	*stack;
+	int size;
 
 	if (c == 'r')
-		ft_r('u', s, size);
-	stack = ft_abr(c, s);
-	temp = stack[size -1];
-	i = size - 1;
-	while (size-- > 1)
+		ft_r('u', s);
+	stack = ft_abr(c, s, &size);
+	temp = stack[size];
+	i = size;
+	while (size-- > 0)
 	{
 		stack[i] = stack[i - 1];
 		i--;
@@ -113,13 +116,19 @@ void	ft_p(char c, t_stacks *s)
 		printf("%2d ", s->b[j--]);
 	printf("\n\n");*/
 
-int	*ft_abr(char c, t_stacks *s)
+int	*ft_abr(char c, t_stacks *s, int *size)
 {
 	int	*stack;
 
 	if (c == 'a' || c == 'u')
+	{
 		stack = s->a;
+		*size = s->a_size;
+	}
 	else if (c == 'b' || c == 's' || c == 'r')
+	{
 		stack = s->b;
+		*size = s->b_size;
+	}
 	return (stack);
 }

@@ -17,6 +17,8 @@ do
 	coup=$(./push_swap $arg | wc -l)
 	if [ $retour = "KO" ]; then
 		ok=$(echo -e "	\033[31m"$retour"\033[0m" $arg $(./push_swap $arg))
+	elif [ $retour = "Error" ]; then
+		ok=$(echo -e "	\033[31m"$retour"\033[0m")
 	else
 		ok=$(echo -e "	\033[32m"$retour"\033[0m")
 	fi
@@ -39,6 +41,8 @@ do
 	coup=$(./push_swap $arg | wc -l)
 	if [ $retour = "KO" ]; then
 		ok=$(echo -e "	\033[31m"$retour"\033[0m" $arg $(./push_swap $arg))
+	elif [ $retour = "Error" ]; then
+		ok=$(echo -e "	\033[31m"$retour"\033[0m")
 	else
 		ok=$(echo -e "	\033[32m"$retour"\033[0m")
 	fi

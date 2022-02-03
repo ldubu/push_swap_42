@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 10:34:29 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/28 13:30:48 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/03 14:11:09 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ void	ft_3nbr(t_stacks *s)
 {
 	if (s->a[2] < s->a[1] && s->a[1] > s->a[0])
 	{
-		ft_rr('a', s, 3);
+		ft_rr('a', s);
 		if (s->a[2] > s->a[1])
-			ft_s('a', s, 3);
+			ft_s('a', s);
 	}
 	else if (s->a[2] > s->a[1] && s->a[1] < s->a[0])
 	{
 		if (s->a[2] > s->a[0])
-			ft_r('a', s, 3);
+			ft_r('a', s);
 		else
-			ft_s('a', s, 3);
+			ft_s('a', s);
 	}
 	else
 	{
-		ft_s('a', s, 3);
-		ft_rr('a', s, 3);
+		ft_s('a', s);
+		ft_rr('a', s);
 	}
 }
