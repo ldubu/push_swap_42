@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:45:39 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/03 14:53:55 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/04 16:09:02 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_rotate(t_stacks *s, int index)
 {
 	while (index < s->a_size)
 	{
+		if (index < 0)
+			index = s->a_size;
 		if (index >= s->a_size / 2)
 		{
 			ft_r('a', s);
@@ -24,11 +26,10 @@ void	ft_rotate(t_stacks *s, int index)
 		else
 		{
 			ft_rr('a', s);
-			if (index == 0)
-				index = s->a_size;
-			else
-				index = index - 1;
+			index = ft_index(s, index, 'a');
+			
 		}
+		// printf("index = %d\n", index);
 	}
 }
 

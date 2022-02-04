@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:49:06 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/03 16:33:18 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/04 17:39:06 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 void	ft_big(t_stacks *s)
 {
 	int	start;
-	int	max;
+	int	end;
 
 	start = 0;
-	max = 0;
-	ft_croissant(s, &start, &max);
-	ft_push_b(s, &start, &max);
+	end = 0;
+	ft_croissant(s, &start, &end);
 	while (s->b_size >= 0)
 	{
 		ft_maximize(s);
@@ -29,7 +28,7 @@ void	ft_big(t_stacks *s)
 	ft_rotate(s, s->index);
 	/*int i = s->size - 1;
 	while (i >= 0)
-		//printf("%2d ", s->a[i--]);
+		printf("%2d ", s->a[i--]);
 	printf("\n");
 	i = s->size - 1 ;
 	while (i >= 0)
