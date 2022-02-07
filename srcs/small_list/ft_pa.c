@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:02:30 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/28 13:30:40 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/07 15:55:29 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_pa(t_stacks *s)
 		i = s->a_size;
 		if (s->b[j] > s->max || s->b[j] < s->min)
 		{
-			ft_rotate(s, s->index);
+			rotate_a(s, s->index);
 			ft_p('a', s);
 		}
 		else if (s->b[j] < s->a[i] && s->b[j] > s->a[0])
@@ -40,7 +40,7 @@ void	ft_pa2(t_stacks *s, int i, int j)
 	{
 		if (s->b[j] > s->a[i] && s->b[j] < s->a[i - 1])
 		{
-			ft_rotate(s, i - 1);
+			rotate_a(s, i - 1);
 			ft_p('a', s);
 			i = 0;
 		}

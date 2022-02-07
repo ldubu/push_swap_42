@@ -30,6 +30,8 @@ int		ft_abs(int x);
 int		ft_cost(t_stacks *s, t_cost *r, int i);
 int		ft_index(t_stacks *s, int j, char c);
 int		ft_false_rotate(t_stacks *s, t_cost *r, int b, int a);
+int		search_next(t_stacks *s);
+int		rotate_b(t_stacks *s, int index);
 
 void	ft_is_sorted(t_stacks *s);
 void	ft_small(t_stacks *s);
@@ -41,7 +43,7 @@ void	ft_p(char c, t_stacks *s);
 void	ft_sup3(t_stacks *s);
 void	ft_move(t_stacks *s);
 void	ft_min_max(t_stacks *s);
-void	ft_rotate(t_stacks *s, int index);
+void	rotate_a(t_stacks *s, int index);
 void	ft_pa(t_stacks *s);
 void	ft_pa2(t_stacks *s, int i, int j);
 void	ft_sort4nbr(t_stacks *s);
@@ -52,5 +54,6 @@ void	ft_push_b(t_stacks *s, int *start, int *end, int max);
 void	ft_maximize(t_stacks *s);
 void	ft_min(t_cost *r, int tmp);
 void	ft_rotate_ab(t_stacks *s, t_cost *r);
+
 
 #endif

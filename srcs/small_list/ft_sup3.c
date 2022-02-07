@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:30:57 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/04 16:08:41 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/07 15:55:24 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_sup3(t_stacks *s)
 	ft_sort4nbr(s);
 	ft_pa(s);
 	ft_min_max(s);
-	ft_rotate(s, s->index);
+	rotate_a(s, s->index);
 }
 
 int	ft_sort(t_stacks *s)

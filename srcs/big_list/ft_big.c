@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:49:06 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/04 17:39:06 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/07 17:23:06 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,85 @@
 
 void	ft_big(t_stacks *s)
 {
-	int	start;
+	int ch_size;
+	int	ch_n;
+	int	i = -1;
+	int cnt = 0;
+	int x = -1;
+	while (++i < s->size)
+	{
+		cnt = 0;
+		x = -1;
+		while (++x < s->size)
+			if (x != i && s->a[x] < s->a[i])
+				cnt++;
+		s->b[i] = cnt;
+	}
+	i = -1;
+	while (++i < s->size)
+	{
+		s->a[i] = s->b[i];
+		s->b[i] = 0;
+	}
+	ch_size = (s->size / 12) + 22;
+	ch_n = 1;
+	i = 0;
+	while (s->a_size >= 0)
+	{
+		//printf("data = %d, ch_size = %d, ch_n = %d, i = %d\n", s->a[s->a_size], ch_size, ch_n, i);
+		if (s->a[s->a_size] < (ch_size * ch_n))
+		{
+			ft_p('b', s);
+			if (s->b[s->b_size] < ch_size * ch_n - (ch_size / 2) && s->b_size > 0)
+				ft_r('b', s);
+			i++;
+		}
+		else
+			ft_r('a', s);
+		if ( i == ch_size * ch_n)
+			ch_n++;
+	}
+	int	index;
+	/*int j= s->size - 1;
+	while (j>= 0)
+		printf("%2d ", s->a[j--]);
+	printf("\n");
+	j= s->size - 1 ;
+	while (j>= 0)
+		printf("%2d ", s->b[j--]);
+	printf("\n\n");*/
+	while (s->a_size < s->size - 1)
+	{
+		index = search_next(s);
+		if (rotate_b(s, index))
+		{
+			ft_p('a', s);
+			if (s->b_size > 0 && s->b[s->b_size] < s->b[s->b_size - 1])
+				ft_s('s', s);
+			else
+				ft_s('a', s);
+		}
+		else
+			ft_p('a', s);
+		/*j= s->size - 1;
+		while (j>= 0)
+			printf("%2d ", s->a[j--]);
+		printf("\n");
+		j= s->size - 1 ;
+		while (j>= 0)
+			printf("%2d ", s->b[j--]);
+		printf("\n\n");*/
+	}
+
+	/*int j= s->size - 1;
+	while (j>= 0)
+		printf("%2d ", s->a[j--]);
+	printf("\n");
+	j= s->size - 1 ;
+	while (j>= 0)
+		printf("%2d ", s->b[j--]);
+	printf("\n\n");*/
+	/*int	start;
 	int	end;
 
 	start = 0;
@@ -25,8 +103,8 @@ void	ft_big(t_stacks *s)
 		ft_maximize(s);
 	}
 	ft_min_max(s);
-	ft_rotate(s, s->index);
-	/*int i = s->size - 1;
+	rotate_a(s, s->index);
+	int j= s->size - 1;
 	while (i >= 0)
 		printf("%2d ", s->a[i--]);
 	printf("\n");
@@ -35,6 +113,18 @@ void	ft_big(t_stacks *s)
 		printf("%2d ", s->b[i--]);
 	printf("\n\n");*/
 
+}
+
+int	search_next(t_stacks *s)
+{
+	int i;
+
+	i = 0;
+	//printf("%d\n", s->b_size);
+	while (s->b[i] < s->b_size)
+		i++;
+	//printf("%d\n", i);
+	return (i);
 }
 
 void	ft_maximize(t_stacks *s)

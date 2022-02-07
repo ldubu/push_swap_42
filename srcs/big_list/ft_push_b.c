@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 15:38:40 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/04 17:38:56 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/07 15:55:33 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_push_b(t_stacks *s, int *start, int *end, int max)
 	}*/
 
 
-	/*ft_rotate(s, s->max_index - 1);
+	/*rotate_a(s, s->max_index - 1);
 	*start = *max;
 	s->max_index = 0;
 	while (s->a_size >= *max || s->i == 0)
