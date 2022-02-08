@@ -15,12 +15,11 @@ SRCS = 	srcs/main.c \
 		srcs/utils/ft_min_max.c \
 		srcs/utils/ft_rotate.c  \
 		srcs/utils/ft_abs.c \
+		srcs/utils/ft_index.c \
 		srcs/small_list/ft_small.c \
 		srcs/small_list/ft_sup3.c \
 		srcs/small_list/ft_pa.c \
-		srcs/big_list/ft_big.c \
-		srcs/big_list/ft_croissant.c \
-		srcs/big_list/ft_push_b.c
+		srcs/big_list/ft_big.c 
 
 OBJ = $(SRCS:.c=.o)
 

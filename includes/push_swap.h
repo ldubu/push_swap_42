@@ -54,6 +54,7 @@ void	ft_push_b(t_stacks *s, int *start, int *end, int max);
 void	ft_maximize(t_stacks *s);
 void	ft_min(t_cost *r, int tmp);
 void	ft_rotate_ab(t_stacks *s, t_cost *r);
-
+void	replace_number(t_stacks *s);
+void	push_on_b(t_stacks *s);
 
 #endif

@@ -22,12 +22,12 @@ int	main(int argc, char *argv[])
 		return (0);
 	s = (t_stacks *) malloc(sizeof(t_stacks));
 	s->a = ft_error(argc, argv);
+	s->b = (int *) malloc (sizeof(int) * argc - 1);
 	if (s->a == NULL)
 	{
 		ft_putstr_fd("Error\n", 1);
 		return (ft_free_struc(s));
 	}
-	s->b = (int *) malloc (sizeof(int) * argc - 1);
 	s->size = argc - 1;
 	while (i < s->size)
 		s->b[i++] = 0;

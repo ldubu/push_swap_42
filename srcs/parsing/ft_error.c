@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 13:43:07 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/01/28 13:29:54 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/08 12:28:05 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,16 @@ int	*ft_error(int argc, char *argv[])
 	while (--argc > 0)
 	{
 		if (ft_isnbr(*argv) == 0)
+		{
+			free(tab);
 			return (NULL);
+		}
 		temp = ft_atoips(*argv);
 		if (ft_is_doublon(tab, argc, temp, size))
+		{
+			free(tab);
 			return (NULL);
+		}
 		tab[argc - 1] = temp;
 		argv++;
 	}

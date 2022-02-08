@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 11:00:36 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/03 16:35:37 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/08 10:05:32 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_s(char c, t_stacks *s)
 {
 	int	temp;
 	int	*stack;
-	int size;
+	int	size;
 
 	if (c == 's')
 		ft_s('u', s);
@@ -37,7 +37,7 @@ void	ft_rr(char c, t_stacks *s)
 	int	temp;
 	int	i;
 	int	*stack;
-	int size;
+	int	size;
 
 	if (c == 'r')
 		ft_rr('u', s);
@@ -64,7 +64,7 @@ void	ft_r(char c, t_stacks *s)
 	int	temp;
 	int	i;
 	int	*stack;
-	int size;
+	int	size;
 
 	if (c == 'r')
 		ft_r('u', s);
@@ -103,7 +103,6 @@ void	ft_p(char c, t_stacks *s)
 		s->a_size = s->a_size - 1;
 		ft_putstr_fd("pb\n", 1);
 	}
-
 }
 /*	int j;
 	j = s->size-1;

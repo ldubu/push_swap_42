@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 11:31:26 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/08 10:03:29 by ldubuche         ###   ########.fr       */
+/*   Created: 2022/02/08 09:58:58 by ldubuche          #+#    #+#             */
+/*   Updated: 2022/02/08 10:05:01 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_abs(int x)
+int	ft_index(t_stacks *s, int j, char c)
 {
-	if (x < 0)
-		x = -x;
-	return (x);
+	if (c == 'a' && j == 0)
+		return (s->a_size);
+	else if (c == 'b' && j == 0)
+		return (s->b_size);
+	return (j - 1);
 }
