@@ -117,7 +117,7 @@ do
 	if [ $coup -gt $pire500 ]; then
 		((pire500 = coup))
 	fi
-	if [ $coup -lt 11500 ]; then
+	if [ $coup -lt 5501 ]; then
 		nbr=$(echo -e "	\033[32m"$coup"\033[0m")
 	else
 		nbr=$(echo -e "	\033[1;31m"$coup"\033[0;0m")
@@ -140,18 +140,18 @@ fi
 if [ $pire5 -gt 12 ]; then
 	message5=$(echo -e "	\033[1;35mTu as plus de 12 coup! KO\033[0;0m")
 fi
-if [ $moyenned -gt 1500 ]; then
+if [ $pire100 -gt 1500 ]; then
 	message100=$(echo -e "	\033[1;35mTu as plus de 1500 coup! KO\033[0;0m")
-elif [ $moyenned -gt 1300 ]; then
+elif [ $pire100 -gt 1300 ]; then
 	message100=$(echo -e "	\033[1;35m(1 point)\033[0;0m");
 	((point100 = 1))
-elif [ $moyenned -gt 1100 ]; then
+elif [ $pire100 -gt 1100 ]; then
 	message100=$(echo -e "	\033[1;35m(2 point)\033[0;0m");
 	((point100 = 2))
-elif [ $moyenned -gt 900 ]; then
+elif [ $pire100 -gt 900 ]; then
 	message100=$(echo -e "	\033[1;35m(3 point)\033[0;0m");
 	((point100 = 3))
-elif [ $moyenned -gt 900 ]; then
+elif [ $pire100 -gt 900 ]; then
 	message100=$(echo -e "	\033[1;35m(4 point)\033[0;0m");
 	((point100 = 4))
 else
@@ -159,18 +159,18 @@ else
 	((point100 = 5))
 fi
 
-if [ $moyennea -gt 11500 ]; then
+if [ $pire500 -gt 11500 ]; then
 	message500=$(echo -e "	\033[1;35mTu as plus de 1500 coup! KO\033[0;0m")
-elif [ $moyennea -gt 10000 ]; then
+elif [ $pire500 -gt 10000 ]; then
 	message500=$(echo -e "	\033[1;35m(1 point)\033[0;0m");
 	((point500 = 1))
-elif [ $moyennea -gt 8500 ]; then
+elif [ $pire500 -gt 8500 ]; then
 	message500=$(echo -e "	\033[1;35m(2 point)\033[0;0m");
 	((point500 = 2))
-elif [ $moyennea -gt 7000 ]; then
+elif [ $pire500 -gt 7000 ]; then
 	message500=$(echo -e "	\033[1;35m(3 point)\033[0;0m");
 	((point500 = 3))
-elif [ $moyennea -gt 5500 ]; then
+elif [ $pire500 -gt 5500 ]; then
 	message500=$(echo -e "	\033[1;35m(4 point)\033[0;0m");
 	((point500 = 4))
 else
@@ -179,17 +179,18 @@ else
 fi
 ((note = 4 * point100 + 6 * point500 + 50))
 echo -e "\n\n\033[1;4;34mNombre de coup moyen:\033[0;0m\n"
-echo -e "-liste de   3 moyenne =" "\033[35m$moyennet\033[0m" $message3
-echo -e "-liste de   5 moyenne =" "\033[35m$moyennec\033[0m" $message5
-echo -e "-liste de 100 moyenne =" "\033[35m$moyenned\033[0m" $message100
-echo -e "pire resultat pour 100 =" $pire100
-echo -e "-liste de 500 moyenne =" "\033[35m$moyennea\033[0m" $message500
-echo -e "pire resultat pour 500 =" $pire500 "\n"
-normi=$(norminette ../*/*.c ../*/*.h | grep Error | wc -l)
-if [ $normi -gt 0 ]; then
-	echo -e "\033[1;31mNORME ERROR\033[0;0m"
-fi
+echo -e "-liste de   3 moyenne =" "\033[35m$moyennet\033[0m" 
+echo -e "pire resultat pour 2 =" $pire3 $message3
+echo -e "-liste de   5 moyenne =" "\033[35m$moyennec\033[0m" 
+echo -e "pire resultat pour 5 =" $pire5 $message5
+echo -e "-liste de 100 moyenne =" "\033[35m$moyenned\033[0m" 
+echo -e "pire resultat pour 100 =" $pire100 $message100
+echo -e "-liste de 500 moyenne =" "\033[35m$moyennea\033[0m"
+echo -e "pire resultat pour 500 =" $pire500 $message500 "\n"
+#normi=$(norminette ../*/*.c ../*/*.h | grep Error | wc -l)
+#if [ $normi -gt 0 ]; then
+#	echo -e "\033[1;31mNORME ERROR\033[0;0m"
+#fi
 echo -e "NOTE = " "\033[1;35m$note %\033[0;0m"
 echo -e "La note est calculee sur la base qu'un point pour 100 equivaut a 4% et un pour 500 equivaut a 6%."
 echo -e "Elle est la a but indicatif et ne correspond pas forcement a ce que vous aurez a la correction."
-echo -e "De plus je me base sur le fait que les points sont accorde en fonction de la moyenne du nombre de coups et non du pire nombres d'instructions."

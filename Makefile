@@ -4,8 +4,7 @@ FLAGS = -Wall -Werror -Wextra
 
 RM = rm -rf
 
-SRCS = 	srcs/main.c \
-		srcs/parsing/ft_isnbr.c \
+SRCS = 	srcs/parsing/ft_isnbr.c \
 		srcs/parsing/ft_is_doublon.c \
 		srcs/parsing/ft_atoips.c \
 		srcs/parsing/ft_is_sorted.c \
@@ -19,15 +18,24 @@ SRCS = 	srcs/main.c \
 		srcs/small_list/ft_small.c \
 		srcs/small_list/ft_sup3.c \
 		srcs/small_list/ft_pa.c \
-		srcs/big_list/ft_big.c 
+		srcs/big_list/ft_big.c \
+
+CHE = checker/checker.c
+
+MAN = srcs/main.c
 
 OBJ = $(SRCS:.c=.o)
+OMAN = $(CHE:.c=.o)
+OCHE = $(MAN:.c=.o)
 
 .c.o:	includes/push_swap.h
 	gcc ${FLAGS} -c $< -o ${<:.c=.o}
 			
-$(NAME): 	$(OBJ) libft
-	@gcc ${FLAGS} $(OBJ) libft.a -o $(NAME)
+$(NAME): 	$(OBJ) $(OMAN) libft
+	@gcc ${FLAGS} $(OBJ) $(OMAN) libft.a -o $(NAME)
+
+bonus:	$(OCHE) $(OBJ) libft
+	@gcc ${FLAGS} $(OBJ) $(OCHE) libft.a -o checker_bonus
 
 libft:
 #	@make printf -C libft/

@@ -40,21 +40,21 @@ int	rotate_b(t_stacks *s, int index)
 	{
 		if (index < 0)
 			index = s->b_size;
-		if (index >= s->b_size / 2)
-		{
-			ft_r('b', s);
-			index = index + 1;
-		}
-		else
-		{
-			ft_rr('b', s);
-			index = ft_index(s, index, 'b');
-		}
 		if (s->b[s->b_size] == (s->b[index] - 1))
 		{
 			ft_p('a', s);
 			sa = 1;
 		}
-	}
+		if (index >= s->b_size / 2 && index < s->b_size)
+		{
+			ft_r('b', s);
+			index = index + 1;
+		}
+		else if (index < s->b_size)
+		{
+			ft_rr('b', s);
+			index = ft_index(s, index, 'b');
+		}
+			}
 	return (sa);
 }

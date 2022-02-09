@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 14:49:06 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/08 11:03:26 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/09 14:40:51 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_big(t_stacks *s)
 	while (s->a_size < s->size - 1)
 	{
 		index = search_next(s);
+		//printf("%d\n", s->b_size);
 		if (rotate_b(s, index))
 		{
 			ft_p('a', s);
