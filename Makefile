@@ -19,37 +19,38 @@ SRCS = 	srcs/parsing/ft_isnbr.c \
 		srcs/small_list/ft_sup3.c \
 		srcs/small_list/ft_pa.c \
 		srcs/big_list/ft_big.c \
+		checker_bonus/instruction_bonus.c
 
-CHE = checker/checker.c
+CHE = checker_bonus/checker_bonus.c
 
 MAN = srcs/main.c
 
 OBJ = $(SRCS:.c=.o)
 OMAN = $(CHE:.c=.o)
-OCHE = $(MAN:.c=.o)
 
 .c.o:	includes/push_swap.h
 	gcc ${FLAGS} -c $< -o ${<:.c=.o}
 			
 $(NAME): 	$(OBJ) $(OMAN) libft
-	@gcc ${FLAGS} $(OBJ) $(OMAN) libft.a -o $(NAME)
+	gcc ${FLAGS} $(OBJ) $(OMAN) libft.a -o $(NAME)
 
-bonus:	$(OCHE) $(OBJ) libft
-	@gcc ${FLAGS} $(OBJ) $(OCHE) libft.a -o checker_bonus
+bonus:	$(OBJ) libft
+	gcc ${FLAGS} -c checker_bonus/checker_bonus.c -o checker_bonus/checker_bonus.o
+	gcc ${FLAGS} $(OBJ) checker_bonus/checker_bonus.o libft.a -o checker
 
 libft:
 #	@make printf -C libft/
-	@make -C libft/
-	@cp ./libft/libft.a ./
+	make -C libft/
+	cp ./libft/libft.a ./
 
 all: $(NAME) libft
 
 clean:
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJ) srcs/main.o
 	@make clean -C libft/
 
 fclean:		clean
-	@$(RM) $(NAME) libft.a
+	@$(RM) $(NAME) libft.a checker
 	@make fclean -C libft/ 
 
 re: 	fclean all
