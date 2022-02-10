@@ -1,5 +1,5 @@
 #!/bin/bash
-setopt shwordsplit
+#setopt shwordsplit
 make -f Makefile -C number_generator/
 make -f Makefile -C ../
 mv number_generator/generator ./
@@ -18,14 +18,13 @@ pire100=0
 pire500=0
 
 
-
 echo -e "\n                   \033[1;34mTEST   3 NOMBRES\033[0;0m\n"
 while [ $i -le 25 ]
 do
 	arg=$(./generator 3 -10 5)
 	retour=$(./push_swap $arg | ./checker_linux $arg)
 	coup=$(./push_swap $arg | wc -l)
-if [ $retour = "KO" ]; then
+	if [ $retour = "KO" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m" $arg $(./push_swap $arg))
 	elif [ $retour = "Error" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m")
@@ -52,7 +51,7 @@ do
 	arg=$(./generator 5 -10 5)
 	retour=$(./push_swap $arg | ./checker_linux $arg)
 	coup=$(./push_swap $arg | wc -l)
-if [ $retour = "KO" ]; then
+	if [ $retour = "KO" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m" $arg $(./push_swap $arg))
 	elif [ $retour = "Error" ]; then
 		ok=$(echo -e "	\033[1;31m"$retour"\033[0;0m")
@@ -177,6 +176,8 @@ else
 	message500=$(echo -e "	\033[1;35m(5 point)\033[0;0m");
 	((point500 = 5))
 fi
+
+
 ((note = 4 * point100 + 6 * point500 + 50))
 echo -e "\n\n\033[1;4;34mNombre de coup moyen:\033[0;0m\n"
 echo -e "-liste de   3 moyenne =" "\033[35m$moyennet\033[0m" 
@@ -187,10 +188,6 @@ echo -e "-liste de 100 moyenne =" "\033[35m$moyenned\033[0m"
 echo -e "pire resultat pour 100 =" $pire100 $message100
 echo -e "-liste de 500 moyenne =" "\033[35m$moyennea\033[0m"
 echo -e "pire resultat pour 500 =" $pire500 $message500 "\n"
-#normi=$(norminette ../*/*.c ../*/*.h | grep Error | wc -l)
-#if [ $normi -gt 0 ]; then
-#	echo -e "\033[1;31mNORME ERROR\033[0;0m"
-#fi
-echo -e "NOTE = " "\033[1;35m$note %\033[0;0m"
+echo -e "\nNOTE = " "\033[1;35m$note %\033[0;0m"
 echo -e "La note est calculee sur la base qu'un point pour 100 equivaut a 4% et un pour 500 equivaut a 6%."
 echo -e "Elle est la a but indicatif et ne correspond pas forcement a ce que vous aurez a la correction."

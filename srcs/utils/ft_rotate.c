@@ -55,6 +55,6 @@ int	rotate_b(t_stacks *s, int index)
 			ft_rr('b', s);
 			index = ft_index(s, index, 'b');
 		}
-			}
+	}
 	return (sa);
 }

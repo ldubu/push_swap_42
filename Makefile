@@ -13,7 +13,6 @@ SRCS = 	srcs/parsing/ft_isnbr.c \
 		srcs/utils/ft_free_struc.c \
 		srcs/utils/ft_min_max.c \
 		srcs/utils/ft_rotate.c  \
-		srcs/utils/ft_abs.c \
 		srcs/utils/ft_index.c \
 		srcs/small_list/ft_small.c \
 		srcs/small_list/ft_sup3.c \
@@ -22,11 +21,12 @@ SRCS = 	srcs/parsing/ft_isnbr.c \
 		checker_bonus/instruction_bonus.c
 
 CHE = checker_bonus/checker_bonus.c
-
 MAN = srcs/main.c
 
+OCHE = $(CHE:.c=.o)
+OMAN = $(MAN:.c=.o)
 OBJ = $(SRCS:.c=.o)
-OMAN = $(CHE:.c=.o)
+
 
 .c.o:	includes/push_swap.h
 	gcc ${FLAGS} -c $< -o ${<:.c=.o}
@@ -34,12 +34,10 @@ OMAN = $(CHE:.c=.o)
 $(NAME): 	$(OBJ) $(OMAN) libft
 	gcc ${FLAGS} $(OBJ) $(OMAN) libft.a -o $(NAME)
 
-bonus:	$(OBJ) libft
-	gcc ${FLAGS} -c checker_bonus/checker_bonus.c -o checker_bonus/checker_bonus.o
-	gcc ${FLAGS} $(OBJ) checker_bonus/checker_bonus.o libft.a -o checker
+bonus:	$(OBJ) $(OCHE) libft
+	gcc ${FLAGS} $(OBJ) $(OCHE) libft.a -o checker
 
 libft:
-#	@make printf -C libft/
 	make -C libft/
 	cp ./libft/libft.a ./
 

@@ -6,7 +6,7 @@
 /*   By: ldubuche <laura.dubuche@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 09:31:56 by ldubuche          #+#    #+#             */
-/*   Updated: 2022/02/04 15:49:08 by ldubuche         ###   ########.fr       */
+/*   Updated: 2022/02/10 11:44:23 by ldubuche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 #include "number.h"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int min, max, voulu = 0, i = 0, nbr = 0;
 
@@ -32,12 +32,16 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Veuillez entrer les parametres ainsi\n");
-		printf("./generate nbr_voulu");
+		printf("./generate nbr_voulu minimum maximum");
 		exit(0);
 	}
 	voulu = ft_atoi(argv[1]);
 	min = ft_atoi(argv[2]);
 	max = ft_atoi(argv[3]);
+	if (max - min < 0 || max - min < voulu)
+	{
+		printf("Attention ! Max doit etre superieur a min et max-min doit etre plus grand que nbr_voulu\n");
+	}
 	int tab[voulu];
 	while (i < voulu)
 	{

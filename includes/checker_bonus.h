@@ -15,13 +15,14 @@
 
 # include "push_swap.h"
 
-int		is_sorted(t_stacks *s);
 int		do_instruction(char *line, t_stacks *s);
-void	get_args(t_stacks *s);
 int		*abr(char c, t_stacks *s, int *size);
-void	p(char c, t_stacks *s);
-void	r(char c, t_stacks *s);
+int		is_sorted(t_stacks *s);
+
 void	rr(char c, t_stacks *s);
 void	sc(char c, t_stacks *s);
+void	p(char c, t_stacks *s);
+void	r(char c, t_stacks *s);
+void	get_args(t_stacks *s);
 
 #endif

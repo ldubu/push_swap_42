@@ -19,38 +19,34 @@
 # include "../libft/libft.h"
 # include "struct.h"
 
-int		ft_isnbr(char *str);
-int		*ft_error(int argc, char *argv[]);
 int		ft_is_doublon(int tab[], int i, int nbr, int size);
+int		*ft_abr(char c, t_stacks *s, int *size);
+int		ft_index(t_stacks *s, int j, char c);
+int		*ft_error(int argc, char *argv[]);
+int		rotate_b(t_stacks *s, int index);
 int		ft_atoips(const char *str);
 int		ft_free_struc(t_stacks *s);
-int		*ft_abr(char c, t_stacks *s, int *size);
-int		ft_sort(t_stacks *s);
-int		ft_abs(int x);
-int		ft_index(t_stacks *s, int j, char c);
 int		search_next(t_stacks *s);
-int		rotate_b(t_stacks *s, int index);
+int		ft_sort(t_stacks *s);
+int		ft_isnbr(char *str);
 
-void	ft_is_sorted(t_stacks *s);
-void	ft_small(t_stacks *s);
-void	ft_3nbr(t_stacks *s);
+void	rotate_a(t_stacks *s, int index);
+void	ft_pa2(t_stacks *s, int i, int j);
+void	replace_number(t_stacks *s);
+void	ft_rr(char c, t_stacks *s);
 void	ft_s(char c, t_stacks *s);
 void	ft_r(char c, t_stacks *s);
-void	ft_rr(char c, t_stacks *s);
 void	ft_p(char c, t_stacks *s);
+void	ft_is_sorted(t_stacks *s);
+void	ft_maximize(t_stacks *s);
+void	ft_sort4nbr(t_stacks *s);
+void	ft_min_max(t_stacks *s);
+void	push_on_b(t_stacks *s);
+void	ft_small(t_stacks *s);
+void	ft_3nbr(t_stacks *s);
 void	ft_sup3(t_stacks *s);
 void	ft_move(t_stacks *s);
-void	ft_min_max(t_stacks *s);
-void	rotate_a(t_stacks *s, int index);
-void	ft_pa(t_stacks *s);
-void	ft_pa2(t_stacks *s, int i, int j);
-void	ft_sort4nbr(t_stacks *s);
 void	ft_big(t_stacks *s);
-void	ft_croissant(t_stacks *s, int *start, int *max);
-void	ft_gagner_ligne(t_stacks *s, int *start, int *max, int *temp);
-void	ft_push_b(t_stacks *s, int *start, int *end, int max);
-void	ft_maximize(t_stacks *s);
-void	replace_number(t_stacks *s);
-void	push_on_b(t_stacks *s);
+void	ft_pa(t_stacks *s);
 
 #endif
