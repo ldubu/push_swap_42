@@ -24,7 +24,6 @@ int		*ft_abr(char c, t_stacks *s, int *size);
 int		ft_index(t_stacks *s, int j, char c);
 int		*ft_error(int argc, char *argv[]);
 int		rotate_b(t_stacks *s, int index);
-int		ft_atoips(const char *str);
 int		ft_free_struc(t_stacks *s);
 int		search_next(t_stacks *s);
 int		ft_sort(t_stacks *s);
@@ -48,5 +47,7 @@ void	ft_sup3(t_stacks *s);
 void	ft_move(t_stacks *s);
 void	ft_big(t_stacks *s);
 void	ft_pa(t_stacks *s);
+
+long int		ft_atoips(const char *str);
 
 #endif

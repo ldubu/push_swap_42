@@ -12,10 +12,10 @@
 
 #include "../../includes/push_swap.h"
 
-int	ft_atoips(const char *str)
+long int	ft_atoips(const char *str)
 {
-	int	num;
-	int	sign;
+	long int	num;
+	long int	sign;
 
 	sign = 1;
 	num = 0;

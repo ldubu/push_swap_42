@@ -14,9 +14,11 @@
 
 int	ft_isnbr(char *str)
 {
+	if ((*str == '-' || *str == '+' )&& ft_strlen(str) > 1)
+		str++;
 	while (*str)
 	{
-		if ((*str < 48 || *str > 57) && *str != '-' && *str != '+')
+		if ((*str < 48 || *str > 57))
 			return (0);
 		str++;
 	}
